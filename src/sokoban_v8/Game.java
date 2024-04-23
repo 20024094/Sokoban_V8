@@ -32,6 +32,8 @@ public class Game extends JPanel {
     private Image backgroundImage;
     
     protected HashMap<String, Image> imageMap;
+    
+    private ArrayList<MapElement> polymorphicElements;
 
     private ArrayList<Wall> wall;
     private ArrayList<Crate> crate;
@@ -48,6 +50,19 @@ public class Game extends JPanel {
         loadImages();
         loadLevel(currentLevelIndex);
         initBoard(); 
+        
+        polymorphicElements = new ArrayList<>();
+        // Initialize elements in polymorphic way
+        polymorphicElements.add(new Player(1, 1, imageMap));
+        polymorphicElements.add(new Wall(2, 2, imageMap));
+        polymorphicElements.add(new Crate(3, 3, imageMap));
+        polymorphicElements.add(new Diamond(4, 4, imageMap));
+    }
+    
+    public void printAllElementStatuses() {
+        for (MapElement element : polymorphicElements) {
+            element.interact();  // Polymorphic method call
+        }
     }
     
     private void loadImages() {
@@ -297,6 +312,7 @@ public class Game extends JPanel {
 
         buildMap(g);
     }
+    
 
     protected class TAdapter extends KeyAdapter {
 
