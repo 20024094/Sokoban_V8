@@ -18,6 +18,10 @@ public class Sokoban_V8 {
             JFrame frame = new JFrame("Sokoban");
             Game sokobanGame = new Game();
             
+            // Polymorphic state
+            Game game = new Game();
+            game.printAllElementStatuses(); // This will print the positions of all game elements
+            
             // Use the methods from Game class to determine the size needed
             int frameWidth = sokobanGame.getMaxLevelWidth() + sokobanGame.OFFSET * 2;
             int frameHeight = sokobanGame.getMaxLevelHeight() + sokobanGame.OFFSET * 2 + frame.getInsets().top;
