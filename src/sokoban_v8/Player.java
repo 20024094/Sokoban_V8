@@ -31,4 +31,9 @@ public class Player extends MapElement {
         setX(dx);
         setY(dy);
     }
+    
+    @Override
+    public void interact() {
+        System.out.println("Player is at coordinates: " + getX() + ", " + getY());
+    }
 }
