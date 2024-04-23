@@ -31,4 +31,9 @@ public class Crate extends MapElement {
         setX(dx);
         setY(dy);
     }
+    
+     @Override
+    public void interact() {
+        System.out.println("Crate is at coordinates: " + getX() + ", " + getY());
+    }
 }
