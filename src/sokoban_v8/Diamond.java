@@ -22,4 +22,9 @@ public class Diamond extends MapElement {
         image = imageMap.get("Diamond"); // Retrieve the Diamond image from the HashMap
         setImage(image); // setImage sets the image for this element
     }
+    
+    @Override
+    public void interact() {
+        System.out.println("Diamond is at coordinates: " + getX() + ", " + getY());
+    }
 }
