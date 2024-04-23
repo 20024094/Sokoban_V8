@@ -22,4 +22,9 @@ public class Wall extends MapElement {
         image = imageMap.get("Wall"); // Retrieve the Wall image from the HashMap
         setImage(image); // setImage sets the image for this element
     }
+    
+    @Override
+    public void interact() {
+        System.out.println("Wall is at coordinates: " + getX() + ", " + getY());
+    }
 }
