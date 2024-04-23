@@ -7,13 +7,16 @@ package sokoban_v8;
 
 import java.awt.Image;
 
-public class MapElement {
+public abstract class MapElement {
 
     private final int SPACE = 17;
 
     private int x;
     private int y;
     private Image image;
+    
+    // An abstract method to be overridden
+    public abstract void interact();
 
     public MapElement(int x, int y) {
         
